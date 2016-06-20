@@ -1,0 +1,243 @@
+@mixin titulo ($sizes){
+	color: $lalala;
+	font-size: $sizes;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.6);
+}
+
+@mixin margen ($top, $bottom) {
+	margin-top: $top;
+	margin-bottom: $bottom;
+}
+
+@mixin margendos ($left, $right) {
+	margin-left: $left;
+	margin-right: $right;
+}
+
+@mixin tipoguno ($letracolor, $letrasize, $letrapeso){
+	font-family: "PT Sans";
+	color: $letracolor;
+	font-size: $letrasize;
+	font-weight: $letrapeso;
+}
+
+@mixin tipogdos ($letracolor, $letrasize, $letrapeso){
+	font-family: "Oswald";
+	color: $letracolor;
+	font-size: $letrasize;
+	font-weight: $letrapeso;
+}
+
+@mixin sombras {
+-webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.45);
+-moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.45);
+box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.45);
+}
+
+@mixin boxtit {
+-webkit-box-shadow: inset -2px -84px 111px 39px rgba(0,0,0,0.7);
+-moz-box-shadow: inset -2px -84px 111px 39px rgba(0,0,0,0.7);
+box-shadow: inset -2px -84px 111px 39px rgba(0,0,0,0.7);
+}
+
+@mixin boxcol {
+		text-align: center;
+		display: inline-block;
+		float: left;
+}
+
+@mixin boxbox {
+	@include boxcol;
+	@include margen (20px, 20px);
+	@include margendos(10px, 10px);
+}
+
+@mixin befaf {
+	:before, :after {
+		content: "";
+		display: block;
+		clear:both;
+	}
+}
+
+@mixin lala {
+		height:170px;
+		background-size:cover;
+		background-repeat:no-repeat;
+}
+
+@mixin lalados {
+		height:120px;
+		background-size:cover;
+		background-repeat:no-repeat;
+}
+
+@mixin boxlad ($colorcaja){
+	@include margen (40px, 0px);
+	border-top: 5px solid $colorcaja;
+	border-bottom: 1px solid $color-gris;
+	padding: 20px 0px 20px 0px;
+	text-align: center;
+	.titular {
+		padding: 5px;
+		background-color: $colorcaja;
+		@include tipogdos ($lalala, 16px, normal);
+		position: relative;
+		bottom: 30px;
+	}
+}
+
+@mixin boxclo ($colorcerrada) {
+	@include margen (40px, 0px);
+	border:  1px solid $color-gris;
+	padding: 20px 20px 0px 20px;
+	text-align: center;
+	@include tipoguno ($papalapapiricoipi, 12px, bolder);
+	.row {
+		@include margen (20px, 20px);
+	}
+	.mas {
+		border-bottom: 7px solid $colorcerrada;
+		padding-bottom: 5px;
+		@include tipoguno ($papalapapiricoipi, 14px, normal);
+		a {
+			color: $colorcerrada;
+		}
+		position: relative;
+		bottom:10px;
+	}
+	.thumb {
+		img {
+			width: 100%;
+		}
+	}
+	.noti {
+		text-align: left;
+	}
+}
+@mixin boxi {
+	@include margen (40px, 0px);
+	background: url(../image/trama_square.jpg);
+	background-repeat: repeat;
+	padding:40px 20px 20px 20px;
+	.blanquito {
+		background-color: $lalala;
+		text-align: center;
+		width: 300px;
+		margin: 0 auto;
+		img {
+			position: relative;
+			bottom: 20px;
+		}
+		p {
+			@include tipoguno ($papalapapiricoipi, 20px, normal);
+
+			span {
+				font-weight: bolder;
+			}
+		}
+		.norm {
+			@include tipoguno ($papalapapiricoipi, 16px, normal);
+		}
+		.btn {
+			background-color: $color-rojo;
+			color: $lalala;
+		}
+		a {
+			@include tipoguno ($color-rojo, 16px, bold);
+		}
+	}
+	.whi-2 {
+		@include margen(20px, 0px);
+	}
+}
+
+@mixin lad ($letragrande){
+	@include tipoguno ($papalapapiricoipi, 14px, bold);
+	text-align: center;
+	.grandes {
+		@include tipoguno ($letragrande, 20px, bold);
+	}
+	.row {
+		@include margen (20px, 20px);
+	}
+	.thumb {
+		img {
+			width: 100%;
+		}
+	}
+	.noti {
+		text-align: left;
+		a {
+			@include tipoguno ($color-rojo, 14px, bold);
+			text-decoration: underline;
+		}
+	}
+}
+
+@mixin lalatres {
+	.otranot {
+		padding:20px;
+		height: 200px;
+		background-position: center;
+		@include margen (20px, 20px);
+	}
+	.white {
+
+		background-color: $lalala;
+		opacity: 0.5;
+		@include tipoguno ($papalapapiricoipi, 16px, bold);
+		padding: 10px 0px;
+		position: relative;
+		top: 120px;
+	}
+}
+
+@mixin blow {
+	.repi {
+		@include margen (30px, 0px);
+		display: block;
+		.central {
+			display: inline-block;
+			padding: 10px;
+			border: 2px solid $color-gris;
+			width: 30%;
+			float: left;
+			@include befaf;
+			@include margendos (10px, 10px);
+			
+			.arriba {
+				text-align: center;
+				padding: 15px 0px;
+
+				p {
+					@include tipoguno ($papalapapiricoipi, 12px, normal);
+				}
+				h5 {
+					@include tipoguno ($papalapapiricoipi, 20px, bold);
+				}
+			}
+			.abajo {
+				background-color: $color-gris;
+				padding: 10px;
+
+				img {
+					border: 2px solid $lalala;
+				}
+				.thumb {
+					box-sizing: border-box;
+				}
+				.assa {
+					margin-left: 30px;
+					span {
+						@include tipogdos ($papalapapiricoipi, 12px, bold);			
+					}
+					p {
+						@include tipogdos ($ranita, 16px, bold);
+					}
+				}
+
+			}
+		}
+	}
+}
